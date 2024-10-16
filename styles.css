@@ -1,0 +1,149 @@
+/* Aplica la imagen de fondo al body */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('FondoHome12.png'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Hace que la imagen cubra toda la página */
+    background-position: center; /* Centra la imagen en la página */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Fija la imagen al fondo mientras se desplaza el contenido */
+    color: #333; /* Color del texto por defecto */
+    margin: 0;
+}
+
+/* Estilo del encabezado */
+header {
+    background-color: #a8a89e;
+    padding: 5px 0; /* Ajusta el padding vertical para reducir la altura */
+    display: flex; /* Usa flexbox para alinear los elementos dentro del header */
+    align-items: center; /* Centra verticalmente los elementos */
+    font-size: 35px;
+    color: white;
+}
+
+/* Ajuste del menú para que las imágenes de compra y usuario estén a la derecha */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+/* Deja la imagen del logo "Roble" a la izquierda */
+li:first-child {
+    flex-grow: 0; /* Ajusta el tamaño del logo */
+}
+
+/* Alinear los botones del menú al lado del logo */
+li.menu-items {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start; /* Alinear a la izquierda */
+    gap: 20px; /* Espacio entre los botones */
+}
+
+/* Estilos de los botones del menú */
+.menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Efecto hover en los botones del menú */
+.menu-button:hover {
+    color: #a8a89e;
+}
+
+/* Estilo específico para la imagen de usuario */
+li.user-icon {
+    margin-left: 0px; /* Espacio entre la imagen de compra y la imagen del usuario */
+    margin-right: 60px; /* Ajusta este valor para mover la imagen de usuario */
+}
+
+/* Estilo específico para la imagen de compra */
+li.purchase-icon {
+    margin-left: 0px; /* Espacio entre las imágenes */
+    margin-right: 30px; /* Ajusta este valor para mover la imagen de compra */
+}
+
+/* Corrección del selector */
+* {
+    box-sizing: border-box;
+}
+
+/* Estilo para el texto centrado y alineado a la izquierda */
+.centered-text {
+    font-family: 'Playfair Display', serif; /* Aplica la fuente */
+    font-size: 60px; /* Tamaño del texto */
+    color: #FFFFFF; /* Color del texto blanco */
+    text-align: left; /* Alinea el texto a la izquierda */
+    position: absolute; /* Posición absoluta para centrar verticalmente */
+    top: 35%; /* Mueve el texto al 40% de la altura */
+    left: 5%; /* Mueve el texto hacia el lado izquierdo */
+    transform: translateY(-50%); /* Centra verticalmente sin afectar el eje X */
+    width: auto; /* Ancho automático */
+    line-height: 1.2; /* Ajusta el espacio entre líneas */
+}
+
+/* Estilo para el nuevo texto con fuente DM Sans */
+.subtext {
+    font-family: 'DM Sans', sans-serif; /* Aplica la fuente DM Sans */
+    font-size: 15px; /* Tamaño de la fuente */
+    color: #FFFFFF; /* Color blanco */
+    text-align: left; /* Alinea a la izquierda */
+    position: absolute;
+    top: 55%; /* Mueve el texto debajo del anterior */
+    left: 5%; /* Alineado con el texto anterior */
+    transform: translateY(-50%); /* Centra verticalmente el nuevo texto */
+    width: 80%; /* Ajusta el ancho */
+    line-height: 1.5; /* Espacio entre líneas */
+}
+
+.button-container {
+    position: absolute;
+    top: 70%; /* Coloca el botón debajo del texto */
+    left: 5%; /* Alineado con el contenido de texto */
+}
+
+/* Estilo para el botón */
+.explore-button {
+    font-family: 'DM Sans', sans-serif; /* Aplica la fuente DM Sans */
+    font-size: 15px; /* Tamaño de la fuente */
+    color: #FFFFFF; /* Color del texto blanco */
+    background-color: transparent; /* Botón transparente */
+    border: 2px solid #FFFFFF; /* Contorno blanco */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para efectos hover */
+}
+
+/* Efecto hover para el botón */
+.explore-button:hover {
+    background-color: #FFFFFF; /* Cambia el fondo a blanco al hacer hover */
+    color: #333; /* Cambia el color del texto a oscuro al hacer hover */
+}
+
+/* Estilo para la imagen en la esquina inferior derecha */
+.corner-logo {
+    position: fixed; /* Mantiene la imagen en la esquina inferior derecha */
+    bottom: 20px; /* Ajusta la distancia desde el borde inferior */
+    right: 20px; /* Ajusta la distancia desde el borde derecho */
+    width: 80px; /* Ancho de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    z-index: 10; /* Se asegura de que la imagen esté en frente de otros elementos */
+}
+
+/* Layout responsivo - hace que las dos columnas se apilen una sobre otra en pantallas pequeñas */
+@media (max-width: 600px) {
+    nav, article {
+        width: 100%;
+        height: auto;
+    }
+}
