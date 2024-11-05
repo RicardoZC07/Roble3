@@ -1,68 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roble</title>
-    <link rel="icon" type="image/x-icon" href="Logoventana.png">
+    <title>Roble - Muebles de Calidad</title>
+    <link rel="icon" type="image/x-icon" href="img/Logoventana.png">
+    
+    <!-- Estilos -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Agregar fuente Playfair Display -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
-
+    
+    <!-- Fuentes de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Contenedor principal -->
     <div class="grid-container">
-        <header>
-            <ul>
-                <li>
+        
+        <!-- Encabezado -->
+        <header class="header">
+            <ul class="header-list">
+                <li class="logo-item">
                     <a href="javascript:location.reload()">
-                        <img src="NombreSinFondo.png" alt="Roble" style="width:130px;height:60px;">
+                        <img src="img/NombreSinFondo.png" alt="Roble Logo" class="logo">
                     </a>
                 </li>
-                <li class="menu-items">
-                    <button class="menu-button">Home</button>
-                    <button class="menu-button">Catálogo</button>
-                    <button class="menu-button">Exclusivos</button>
-                    <button class="menu-button">Acerca de Roble</button>
-                    <button class="menu-button">Sucursales</button>
+                <li class="menu">
+                    <a href="index.html">Home</a>
+                    <div class="dropdown">
+                        <a href="catalogo.html" class="dropdown-toggle">Catálogo</a>
+                        <div class="dropdown-menu">
+                            <a href="#">Sillas</a>
+                            <a href="#">Mesas de comedor</a>
+                            <a href="#">Cantinas</a>
+                            <a href="#">Camastros</a>
+                            <a href="#">Trinchadores</a>
+                            <a href="#">Cabeceras</a>
+                            <a href="#">Barras de madera</a>
+                            <a href="#">Roperos</a>
+                            <a href="#">Bancos</a>
+                            <a href="#">Burós</a>
+                            <a href="#">Sillones individuales</a>
+                            <a href="#">Bases de cama</a>
+                            <a href="#">Sofás</a>
+                            <a href="#">Marcos para espejo/retratos</a>
+                            <a href="#">Mesas de centro</a>
+                            <a href="#">Puertas</a>
+                            <a href="#">Bufeteras</a>
+                            <a href="#">Cajoneras</a>
+                        </div>
+                    </div>
+                    <a href="#">Exclusivos</a>
+                    <a href="#">Acerca de Roble</a>
+                    <a href="#">Sucursales</a>
                 </li>
-                <li class="purchase-icon">
-                    <img src="BolsoCompraSinFondo2.png" alt="Compra" style="width:30px;height:30px;">
-                </li>
-                <li class="user-icon">
-                    <img src="InicioSesionSinFondo.png" alt="Usuario" style="width:30px;height:30px;">
+                <li class="cart-icon">
+                    <a href="carrito.html">
+                        <img src="img/BolsoCompraSinFondo2.png" alt="Carrito de Compra" class="icon">
+                    </a>
                 </li>
             </ul>
         </header>
         
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <section class="intro">
+                <h1 class="main-heading">Estilo que transforma, <br> calidad que perdura</h1>
+                <p class="main-subtext">Somos una empresa dedicada a la creación del mueble de tus sueños, <br> haciéndolos realidad. Solo déjate llevar por tu imaginación <br> y el resto lo hacemos nosotros.</p>
+                
+                <!-- Botón de llamada a la acción -->
+                <div class="button-container">
+                    <a href="Catalogo.html" class="explore-button">EXPLORA YA</a>
+                </div>
+            </section>
+        </main>
         
-        <!-- Nuevo texto centrado en la mitad de la página -->
-        <div class="centered-text">
-            <span>Estilo que transforma,</span><br>
-            <span>calidad que perdura</span>
-        </div>
-        
-        <!-- Nuevo texto con estilo DM Sans -->
-        <div class="subtext">
-            <span>Somos una empresa dedicada a la creación del mueble de tus</span><br>
-            <span>sueños, haciéndolos realidad. Solo déjate llevar por tu imaginación</span><br>
-            <span>y el resto lo hacemos nosotros.</span>
-        </div>
-
-        <!-- Botón transparente con contorno -->
-        <div class="button-container">
-            <a href="Menu.html">
-                <button class="explore-button">EXPLORA YA</button>
-            </a>
-        </div>
-        
-        
+        <!-- Imagen en la esquina inferior derecha -->
+        <img src="img/Logoventana.png" alt="Logo" class="corner-logo">
         
     </div>
-    <!-- Imagen en la esquina inferior derecha -->
-<img src="Logoventana.png" alt="Logo" class="corner-logo">
-
 </body>
 </html>
+
