@@ -27,9 +27,10 @@
                 </li>
                 <li class="menu">
                     <a href="index.html">Home</a>
-                    <div class="dropdown">
-                        <a href="catalogo.html" class="dropdown-toggle">Catálogo</a>
-                        <div class="dropdown-menu">
+                    <div class="dropdown" id="dropdown">
+                        <a href="#"  class="dropdown-toggle">Catálogo</a>
+                        <div class="dropdown-menu" id="dropdown-menu">
+                            <a href="catalogo.html">Todos</a>
                             <a href="#">Sillas</a>
                             <a href="#">Mesas de comedor</a>
                             <a href="#">Cantinas</a>
@@ -50,23 +51,29 @@
                             <a href="#">Cajoneras</a>
                         </div>
                     </div>
-                    <a href="#">Exclusivos</a>
+                    <a href="#">Exclusivo</a>
                     <a href="#">Acerca de Roble</a>
                     <a href="#">Sucursales</a>
+                </li>
+                <li class="login-icon">
+                    <a href="login.html">
+                        <img src="img/acceso2.png" alt="login" class="icon">
+                    </a>
                 </li>
                 <li class="cart-icon">
                     <a href="carrito.html">
                         <img src="img/BolsoCompraSinFondo2.png" alt="Carrito de Compra" class="icon">
                     </a>
                 </li>
+               
             </ul>
         </header>
         
         <!-- Contenido principal -->
-        <main class="main-content">
+        <main class="main-content" id="main-content">
             <section class="intro">
                 <h1 class="main-heading">Estilo que transforma, <br> calidad que perdura</h1>
-                <p class="main-subtext">Hola papito Somos una empresa dedicada a la creación del mueble de tus sueños, <br> haciéndolos realidad. Solo déjate llevar por tu imaginación <br> y el resto lo hacemos nosotros.</p>
+                <p class="main-subtext">xxxSomos una empresa dedicada a la creación del mueble de tus sueños, <br> haciéndolos realidad. Solo déjate llevar por tu imaginación <br> y el resto lo hacemos nosotros.</p>
                 
                 <!-- Botón de llamada a la acción -->
                 <div class="button-container">
@@ -77,7 +84,7 @@
         
         <!-- Imagen en la esquina inferior derecha -->
         <img src="img/Logoventana.png" alt="Logo" class="corner-logo">
-        
+        <script  src="job.js " ></script>
     </div>
 </body>
 </html>
