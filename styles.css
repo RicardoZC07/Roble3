@@ -3,6 +3,7 @@
 }
 
 body {
+    
     margin: 0;
     font-family: 'DM Sans', sans-serif;
     color: #333;
@@ -29,6 +30,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px 20px;
     width: 100%;
+    
 }
 
 /* Estilo de la lista de navegación */
@@ -54,10 +56,16 @@ body {
     align-items: center;
     gap: 20px;
     flex-grow: 1;
+    justify-content: center;
 }
 
 /* Icono de carrito */
 .cart-icon .icon {
+    width: 24px;
+    height: 24px;
+}
+/* Icono de carrito */
+.login-icon .icon {
     width: 24px;
     height: 24px;
 }
@@ -76,47 +84,67 @@ body {
 }
 
 /* Estilo Dropdown */
+/* Estilo para el contenedor dropdown */
 .dropdown {
     position: relative;
 }
 
+/* Estilo para el enlace que activa el menú */
 .dropdown-toggle {
     cursor: pointer;
     color: #333;
 }
 
+/* Estilo para el menú */
 .dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 4px;
-    top: 100%; /* Alineación debajo del toggle */
-    left: 0;
-    min-width: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 10;
+    display: none; /* Inicialmente oculto */
+    position: fixed; /* Fijo para cubrir la pantalla */
+    top: 65px; /* Ajusta esto según la altura del header */
+    left: 0; /* Alineado al borde izquierdo */
+    width: 100vw; /* Ocupa todo el ancho de la ventana */
+    height: calc(100vh - 100px); /* Ocupa todo el alto menos la altura del header */
+    background-color: #e5e5e5; /* Fondo semitransparente */
+    z-index: 10; /* Asegura que esté por encima de otros elementos */
+    padding: 20px; /* Espaciado interno */
+   
+    overflow-y: auto; /* Permite desplazarse si el contenido es más alto que la ventana */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Distribuye en columnas */
 }
 
+/* Estilo para los enlaces dentro del menú */
 .dropdown-menu a {
-    color: #333;
+    color: #333333ae;
     display: block;
-    padding: 5px 0;
+    padding: 10px 0;
     text-decoration: none;
-    font-size: 0.9em;
+    font-size: 1.2em;
 }
 
+/* Efecto hover para los enlaces */
 .dropdown-menu a:hover {
-    background-color: #f5f5f5;
+    border-bottom: none;
+    color: #000000;
+    
+
+}
+/* Mostrar el menú cuando el cursor esté sobre .dropdown */
+.dropdown:hover .dropdown-menu {
+    display: grid;
+    
+}
+.dropdown:hover #main-content {
+    display: none;
+    
+    
+    
 }
 
-/* Mostrar el dropdown al pasar el ratón */
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
+
+
+
 
 /* Sección Principal */
-.main-content {
+#main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
