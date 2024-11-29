@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roble - Muebles de Calidad</title>
+    <link rel="icon" type="image/x-icon" href="img/Logoventana.png">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles/stylelogin.css">
+    
+    <!-- Fuentes de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  
+   <!-- Header -->
+   <header class="header">
+    <ul class="header-list">
+        <li class="logo-item">
+            <a href="javascript:location.reload()">
+                <img src="img/NombreSinFondo.png" alt="Roble Logo" class="logo">
+            </a>
+        </li>
+        <li class="menu">
+            <a href="index.html">Home</a>
+            <div class="dropdown" id="dropdown">
+                <a href="Catalogo.php"  class="dropdown-toggle">Catálogo</a>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="#">Sillas</a>
+                    <a href="#">Mesas de comedor</a>
+                    <a href="#">Bancas</a>
+                    <a href="#">Bancos</a>
+                    <a href="#">Sofás</a>
+                    <a href="#">Mesas de centro</a>
+                </div>
+            </div>
+            <a href="#">Exclusivo</a>
+            <a href="AcercaDeRoble.html">Acerca de Roble</a>
+            <a href="#">Sucursales</a>
+        </li>
+        <li class="login-icon">
+            <a href="login.html">
+                <img src="img/acceso2.png" alt="login" class="icon">
+            </a>
+        </li>
+        <li class="cart-icon">
+            <a href="carrito.html">
+                <img src="img/BolsoCompraSinFondo2.png" alt="Carrito de Compra" class="icon">
+            </a>
+        </li>
+       
+    </ul>
+</header>
+
+  <!-- Contenido Principal -->
+  <main class="main-content">
+    <div class="container">
+      <div class="form-container">
+        <div class="toggle-buttons">
+          <button class="active" onclick="showLogin()">Login</button>
+          <button onclick="showSignUp()">Sign Up</button>
+        </div>
+        <form id="login-form" class="form active" method="POST" action="login.php">
+          <h2>Login</h2>
+          <input type="email" name="email" placeholder="Email" required />
+          <input type="password" name="password" placeholder="Password" required />
+          <input type="hidden" name="action" value="login">
+          <button type="submit">Login</button>
+      </form>
+      
+      <form id="signup-form" class="form" method="POST" action="login.php">
+          <h2>Sign Up</h2>
+          <input type="text" name="username" placeholder="Username" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <input type="password" name="password" placeholder="Password" required />
+          <input type="hidden" name="action" value="signup">
+          <button type="submit">Sign Up</button>
+      </form>
+      </div>
+    </div>
+  </main>
+        
+        
+        <!-- Imagen en la esquina inferior derecha -->
+        <img src="img/Logoventana.png" alt="Logo" class="corner-logo">
+        <script src="loginjon.js"></script>
+        
+    
+</body>
+</html>
