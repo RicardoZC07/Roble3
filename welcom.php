@@ -1,3 +1,8 @@
+<?php
+session_start(); // Asegúrate de iniciar la sesión en la página de destino
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -43,8 +48,8 @@
                     <a href="#">Sucursales</a>
                 </li>
                 <li class="login-icon">
-                    <a href="login.html">
-                        <img src="img/acceso2.png" alt="login" class="icon">
+                    <a href="#">
+                   <?php echo $_SESSION['username'] ?>
                     </a>
                 </li>
                 <li class="cart-icon">
@@ -75,4 +80,5 @@
     </div>
 </body>
 </html>
+
 

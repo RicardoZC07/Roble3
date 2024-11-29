@@ -1,7 +1,3 @@
-* {
-    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho y alto total */
-}
-
 body {
     
     margin: 0;
@@ -12,14 +8,12 @@ body {
     background-position: center; /* Centra la imagen en la página */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     background-attachment: fixed; /* Fija la imagen al fondo mientras se desplaza el contenido */
+    display: flex;
+    flex-direction: column; /* Apila el header y el contenido principal */
+    height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
 }
 
-.grid-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    overflow-x: hidden; /* Evita desplazamiento horizontal */
-}
+
 
 /* Header */
 .header {
@@ -28,7 +22,7 @@ body {
     justify-content: space-between;
     background-color: #e5e5e5;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
+    padding: 10px 0px;
     width: 100%;
     
 }
@@ -76,7 +70,7 @@ body {
     font-weight: 600;
     color: #333;
     font-family: 'Playfair Display', serif;
-    padding: 8px 12px;
+    padding: 8px 20px;
 }
 
 .header-list a:hover {
@@ -123,59 +117,95 @@ body {
     display: block;
 }
 
+/*///////////////////////////////////////*/
+.product-detail {
+    height: 100%;
+    
+    
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 0px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centra el contenedor horizontalmente */
+  align-items: center; /* Centra el contenedor verticalmente */
+}
+
+.product-image-container {
+   
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
 
 
+.product-detail-image {
+    max-width: 100%;
+    max-height: 400px;
+    border-radius: 8px;
+    object-fit: cover;
+}
 
-
-/* Sección Principal */
-#main-content {
+.product-info-container {
+    
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    text-align: center;
-    padding: 50px 20px;
+    gap: 0px;
 }
 
-.main-heading {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5em;
+.product-detail-name {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 28px;
     font-weight: bold;
+    color: #000000;
     margin: 0;
-    color: #e5e5e5;
 }
 
-.main-subtext {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 1.2em;
-    color: #e1d9d9;
-    margin-top: 15px;
+.product-detail-price {
+    font-size: 24px;
+    color: #000000;
+    
+}
+
+.product-detail-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: #000000;
     line-height: 1.5;
 }
 
-/* Botón de llamada a la acción */
-.button-container {
-    margin-top: 30px;
+.product-detail-category {
+    font-size: 16px;
+    color: #777;
+    font-style: italic;
 }
 
-.explore-button {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 1em;
-    padding: 12px 30px;
-    color: #e5e5e5;
-    border: 2px solid #e5e5e5;
-    background-color: transparent;
-    text-transform: uppercase;
-    text-decoration: none;
+.add-to-cart-button {
+    padding: 15px 20px;
+    background: linear-gradient(90deg, #131d71, #3a57e8);
+    color: #fff;
+    font-size: 18px;
     font-weight: bold;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px;
+    align-self: flex-start;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.explore-button:hover {
-    background-color: #e5e5e5;
-    color: #000000;
+.add-to-cart-button:hover {
+    background: linear-gradient(90deg, #0f165a, #2b4bcc);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Imagen en la esquina inferior derecha */
@@ -185,11 +215,5 @@ body {
     right: 10px;
     width: 50px;
     opacity: 0.8;
-}
+  }
 
-/* Media Queries para Responsividad */
-@media (max-width: 768px) {
-    .product-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Ajuste para dispositivos más pequeños */
-    }
-}
