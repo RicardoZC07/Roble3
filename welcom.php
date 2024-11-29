@@ -31,9 +31,9 @@ session_start(); // Asegúrate de iniciar la sesión en la página de destino
                     </a>
                 </li>
                 <li class="menu">
-                    <a href="index.html">Home</a>
+                    <a href="welcom.php">Home</a>
                     <div class="dropdown" id="dropdown">
-                        <a href="Catalogo.php"  class="dropdown-toggle">Catálogo</a>
+                        <a href="welCatalogo.php"  class="dropdown-toggle">Catálogo</a>
                         <div class="dropdown-menu" id="dropdown-menu">
                             <a href="#">Sillas</a>
                             <a href="#">Mesas de comedor</a>
@@ -43,17 +43,17 @@ session_start(); // Asegúrate de iniciar la sesión en la página de destino
                             <a href="#">Mesas de centro</a>
                         </div>
                     </div>
-                    <a href="#">Exclusivo</a>
-                    <a href="#">Acerca de Roble</a>
-                    <a href="#">Sucursales</a>
+                    <a href="welAcercade.php">Acerca de Roble</a>
+                    <a href="welSucursales.php">Sucursales</a>
                 </li>
                 <li class="login-icon">
-                    <a href="#">
-                   <?php echo $_SESSION['username'] ?>
-                    </a>
+                   
+                    
+                    <a href="logout.php">Cerrar Sesión (<?php echo htmlspecialchars($_SESSION['username']); ?>)</a>
+                    
                 </li>
                 <li class="cart-icon">
-                    <a href="carrito.html">
+                    <a href="shop.php">
                         <img src="img/BolsoCompraSinFondo2.png" alt="Carrito de Compra" class="icon">
                     </a>
                 </li>
@@ -69,7 +69,7 @@ session_start(); // Asegúrate de iniciar la sesión en la página de destino
                 
                 <!-- Botón de llamada a la acción -->
                 <div class="button-container">
-                    <a href="Catalogo.html" class="explore-button">EXPLORA YA</a>
+                    <a href="welCatalogo.php" class="explore-button">EXPLORA YA</a>
                 </div>
             </section>
         </main>

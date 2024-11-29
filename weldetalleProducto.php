@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // Conexión a la base de datos
 $host = "localhost";
 $user = "root";
@@ -41,9 +43,9 @@ if ($id > 0) {
                         </a>
                     </li>
                     <li class="menu">
-                        <a href="index.html">Home</a>
+                        <a href="welcom.php">Home</a>
                         <div class="dropdown" id="dropdown">
-                            <a href="Catalogo.php"  class="dropdown-toggle">Catálogo</a>
+                            <a href="welCatalogo.php"  class="dropdown-toggle">Catálogo</a>
                             <div class="dropdown-menu" id="dropdown-menu">
                                 <a href="#">Sillas</a>
                                 <a href="#">Mesas de comedor</a>
@@ -54,18 +56,20 @@ if ($id > 0) {
                             </div>
                         </div>
                         
-                        <a href="AcercaDeRoble.html">Acerca de Roble</a>
-                        <a href="Sucursales.html">Sucursales</a>
+                        <a href="welAcercade.php">Acerca de Roble</a>
+                        <a href="welSucursales.php">Sucursales</a>
                     </li>
                     <li class="login-icon">
-                        <a href="login.html">
-                            <img src="img/acceso2.png" alt="login" class="icon">
+                        
+                        <a href="#">
+                         <?php echo $_SESSION['username'] ?>
                         </a>
+                        
                     </li>
                     <li class="cart-icon">
-                    <a href="login.html">
-                        <img src="img/BolsoCompraSinFondo2.png" alt="Carrito de Compra" class="icon" onclick=addcart()>
-                    </a>
+                        <a href="shop.php">
+                            <img src="img/BolsoCompraSinFondo2.png" alt="Carrito de Compra" class="icon">
+                        </a>
                     </li>
                 
                 </ul>
@@ -88,17 +92,14 @@ if ($id > 0) {
                     </p>
 
                     
-                    <button class="add-to-cart-button" onclick=addcart()>Agregar al carrito</button>
+                    <form action="carrito.php" method="POST" class="add-to-cart-form">
+                    <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
+                      <button type="submit" class="add-to-cart-button">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
 
             <img src="img/Logoventana.png" alt="Logo" class="corner-logo">
-            <script>
-            function addcart() {
-                alert("INICIA SESION");
-                window.location.href = "login.html";
-            }
-            </script>
     
         </body>
         </html>

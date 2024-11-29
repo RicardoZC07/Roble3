@@ -36,9 +36,9 @@
                     <a href="#">Mesas de centro</a>
                 </div>
             </div>
-            <a href="#">Exclusivo</a>
-            <a href="#">Acerca de Roble</a>
-            <a href="#">Sucursales</a>
+           
+            <a href="AcercaDeRoble.html">Acerca de Roble</a>
+            <a href="Sucursales.html">Sucursales</a>
         </li>
         <li class="login-icon">
             <a href="login.html">
@@ -46,8 +46,8 @@
             </a>
         </li>
         <li class="cart-icon">
-            <a href="carrito.html">
-                <img src="img/BolsoCompraSinFondo2.png" alt="Carrito de Compra" class="icon">
+            <a href="#">
+                <img src="img/BolsoCompraSinFondo2.png" alt="Carrito de Compra" class="icon" onclick=addcart()>
             </a>
         </li>
        
@@ -86,7 +86,11 @@
         <!-- Imagen en la esquina inferior derecha -->
         <img src="img/Logoventana.png" alt="Logo" class="corner-logo">
         <script src="loginjon.js"></script>
-        
+        <script>
+            function addcart() {
+                alert("INICIA SESION");
+            }
+            </script>
     
 </body>
 </html>

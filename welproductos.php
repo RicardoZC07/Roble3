@@ -41,18 +41,13 @@ if ($result && $result->num_rows > 0) {
                     <h3 class='product-name'>{$row['nombre']}</h3>
                     <p class='product-description'>Precio: \${$row['precio']}</p>
                     <div class='bot-sho' >
-                    <button class='product-button' onclick=\"window.location.href='detalleProducto.php?id={$row['id']}'\">Ver más</button>
+                    <button class='product-button' onclick=\"window.location.href='weldetalleProducto.php?id={$row['id']}'\">Ver más</button>
                     
                     
-                    <img src='img/BolsoCompraSinFondo2.png' alt='shop' class='shoplogo' onclick=addcart() >
+                    <img src='img/BolsoCompraSinFondo2.png' alt='shop' class='shoplogo' onclick='addToCart({$row['id']})'>
                     
                     </div>
-                </div>
-                <script>
-            function addcart() {
-                alert('INICIA SESION');
-            }
-            </script>";
+                </div>";
                 
                 break;
             }
@@ -61,7 +56,7 @@ if ($result && $result->num_rows > 0) {
 
     // Muestra los contenedores con los productos
     foreach ($categories as $category => $products) {
-        echo "<div class='{$category}'>";
+        echo "<div class='{$category}' id ='#{$category} '>";
         echo "<h2 class='category-title'>" . ucfirst($category) . "</h2>";
         echo $products ?: "<p>No hay productos disponibles en esta categoría.</p>";
         echo "</div>";
@@ -72,3 +67,22 @@ if ($result && $result->num_rows > 0) {
 
 $conn->close();
 ?>
+
+<script>
+function addToCart(productId) {
+    // Redirige al archivo carrito.php enviando el ID del producto como un parámetro POST
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = 'carrito.php';
+
+    // Crear un campo oculto con el ID del producto
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'product_id';
+    input.value = productId;
+
+    form.appendChild(input);
+    document.body.appendChild(form);
+    form.submit(); // Enviar el formulario
+}
+</script>

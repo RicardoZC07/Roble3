@@ -1,3 +1,9 @@
+<?php
+session_start(); // Asegúrate de iniciar la sesión en la página de destino
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,35 +17,37 @@
         <header class="header">
             <ul class="header-list">
                 <li class="logo-item">
-                    <a href="index.html">
+                    <a href="welcom.php">
                         <img src="img/NombreSinFondo.png" alt="Roble" class="logo">
                     </a>
                 </li>
                 <li class="menu">
-                    <a href="index.html">Home</a>
+                    <a href="welcom.php">Home</a>
                     <div class="dropdown">
-                        <a href="catalogo.html" class="dropdown-toggle">Catálogo</a>
+                        <a href="welCatalogo.php" class="dropdown-toggle">Catálogo</a>
                         <div class="dropdown-menu">
-                            <a href="#">Sillas</a>
+                            <a href="#silla">Sillas</a>
                             <a href="#">Mesas de comedor</a>
-                            <a href="#">Bancas</a>
-                            <a href="#">Bancos</a>
-                            <a href="#">Sofás</a>
+                            <a href="#bancas">Bancas</a>
+                            <a href="#bancos">Bancos</a>
+                            <a href="#sofa">Sofás</a>
                             <a href="#">Mesas de centro</a>
                         </div>
                     </div>
                     
-                    <a href="AcercaDeRoble.html">Acerca de Roble</a>
-                    <a href="Sucursales.html">Sucursales</a>
+                    <a href="welAcercade.php">Acerca de Roble</a>
+                    <a href="welSucursales.php">Sucursales</a>
                 </li>
                 <li class="login-icon">
-                    <a href="login.html">
-                        <img src="img/acceso2.png" alt="login" class="icon">
+                    
+                    <a href="#">
+                   <?php echo $_SESSION['username'] ?>
                     </a>
+                    
                 </li>
                 <li class="cart-icon">
-                <a href="login.html">
-                        <img src="img/BolsoCompraSinFondo2.png" alt="Carrito de Compra" class="icon" onclick=addcart()>
+                    <a href="shop.php">
+                        <img src="img/BolsoCompraSinFondo2.png" alt="Carrito" class="icon">
                     </a>
                 </li>
             </ul>
@@ -47,17 +55,11 @@
 
         <!-- Sección de productos estilo ecommerce -->
         <section class="product-grid">
-           <?php include 'productos.php'; ?>
+           <?php include 'welproductos.php'; ?>
          </section>
 
 
     </div>
-    <script>
-            function addcart() {
-                alert("INICIA SESION");
-                window.location.href = "login.html";
-            }
-            </script>
     
 </body>
 </html>
