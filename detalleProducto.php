@@ -1,15 +1,5 @@
 <?php
-// Conexión a la base de datos
-$host = "localhost";
-$user = "root";
-$password = "";
-$database = "roble";
-
-$conn = new mysqli($host, $user, $password, $database);
-
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
-}
+include('conexion.php');
 
 // Obtener el ID del producto desde la URL
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
@@ -43,16 +33,16 @@ if ($id > 0) {
                     <li class="menu">
                         <a href="index.html">Home</a>
                         <div class="dropdown" id="dropdown">
-                            <a href="Catalogo.php"  class="dropdown-toggle">Catálogo</a>
-                            <div class="dropdown-menu" id="dropdown-menu">
-                                <a href="#">Sillas</a>
-                                <a href="#">Mesas de comedor</a>
-                                <a href="#">Bancas</a>
-                                <a href="#">Bancos</a>
-                                <a href="#">Sofás</a>
-                                <a href="#">Mesas de centro</a>
-                            </div>
+                        <a href="Catalogo.php"  class="dropdown-toggle">Catálogo</a>
+                        <div class="dropdown-menu" id="dropdown-menu">
+                            <a href="filtrado.php?categoria=silla">Sillas</a>
+                            <a href="filtrado.php?categoria=Mesa%20Comedor">Mesas de comedor</a>
+                            <a href="filtrado.php?categoria=Bancas">Bancas</a>
+                            <a href="filtrado.php?categoria=Bancos">Bancos</a>
+                            <a href="filtrado.php?categoria=Sofa">Sofás</a>
+                            <a href="filtrado.php?categoria=Mesa%20Centro">Mesas de centro</a>
                         </div>
+                    </div>
                         
                         <a href="AcercaDeRoble.html">Acerca de Roble</a>
                         <a href="Sucursales.html">Sucursales</a>
@@ -81,7 +71,7 @@ if ($id > 0) {
                 <!-- Contenedor de la información -->
                 <div class="product-info-container">
                     <h1 class="product-detail-name"><?php echo htmlspecialchars($product['nombre']); ?></h1>
-                    <p class="product-detail-price">$<?php echo number_format($product['precio'], 2); ?></p>
+                    <p class="product-detail-price">$<?php echo number_format($product['precio'], 2); ?> MX</p>
                     <p class="product-detail-description">
                         Cantidad disponible: <?php echo $product['cantidad']; ?><br>
                         <?php echo nl2br(htmlspecialchars($product['informacion'])); ?>

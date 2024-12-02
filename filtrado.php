@@ -50,9 +50,84 @@
 
         <!-- Sección de productos estilo ecommerce -->
 
-        <section class="product-grid">
-           <?php include 'productos.php'; ?>
-         </section>
+        <?php
+            // Conexión a la base de datos
+            include('conexion.php');
+
+            // Recuperar la categoría seleccionada
+            $categoria = isset($_GET['categoria']) ? $_GET['categoria'] : '';
+
+            // Inicializar contenedores de categorías
+            $categories = [
+                'silla' => '',
+                'mesa comedor' => '',
+                'bancas' => '',
+                'bancos' => '',
+                'sofa' => '',
+                'mesa centro' => ''
+            ];
+
+            // Consulta SQL para filtrar productos
+            if ($categoria) {
+                $query = "SELECT * FROM productos WHERE categoria = ?";
+                $stmt = $conn->prepare($query);
+                $stmt->bind_param('s', $categoria);
+            } else {
+                // Mostrar todos los productos si no se seleccionó categoría
+                $query = "SELECT * FROM productos";
+                $stmt = $conn->prepare($query);
+            }
+
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            // Iterar sobre los productos y asignarlos a la categoría correspondiente
+            while ($row = $result->fetch_assoc()) {
+                $categoriaProducto = strtolower(trim($row['categoria'])); // Normalizar categoría
+                if (array_key_exists($categoriaProducto, $categories)) {
+                    $categories[$categoriaProducto] .= "
+                        <div class='product-card'>
+                            <img src='data:image/jpeg;base64," . base64_encode($row['foto']) . "' alt='{$row['informacion']}' class='product-image'>
+                            <h3 class='product-name'>{$row['nombre']}</h3>
+                            <p class='product-description'>Precio: $" . number_format($row['precio'], 2) . " MX </p>
+                            <div class='bot-sho'>
+                                <button class='product-button' onclick=\"window.location.href='detalleProducto.php?id={$row['id']}'\">Ver más</button>
+                                <img src='img/BolsoCompraSinFondo2.png' alt='shop' class='shoplogo' onclick='addcart()'>
+                            </div>
+                        </div>";
+                }
+            }
+
+            // Mostrar las categorías y sus productos
+            if ($categoria) {
+                // Mostrar solo la categoría seleccionada
+                $categoria = strtolower(trim($categoria)); // Normalizar categoría seleccionada
+                if (array_key_exists($categoria, $categories)) {
+                    echo "<div class='{$categoria}'>";
+                    echo "<h2 class='category-title'>" . ucfirst($categoria) . "</h2>";
+                    echo $categories[$categoria] ?: "<p>No hay productos disponibles en esta categoría.</p>";
+                    echo "</div>";
+                } else {
+                    echo "<p>La categoría seleccionada no existe.</p>";
+                }
+            } else {
+                // Mostrar todas las categorías
+                foreach ($categories as $category => $products) {
+                    echo "<div class='{$category}'>";
+                    echo "<h2 class='category-title'>" . ucfirst($category) . "</h2>";
+                    echo $products ?: "<p>No hay productos disponibles en esta categoría.</p>";
+                    echo "</div>";
+                }
+            }
+
+            // Script para manejar clics en agregar al carrito
+            echo "<script>
+            function addcart() {
+                alert('INICIA SESION');
+            }
+            </script>";
+            ?>
+
         
          <footer>
         <div class="container">
