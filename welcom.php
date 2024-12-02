@@ -1,3 +1,8 @@
+<?php
+session_start(); // Asegúrate de iniciar la sesión en la página de destino
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -26,9 +31,9 @@
                     </a>
                 </li>
                 <li class="menu">
-                    <a href="index.html">Home</a>
+                    <a href="welcom.php">Home</a>
                     <div class="dropdown" id="dropdown">
-                        <a href="Catalogo.php"  class="dropdown-toggle">Catálogo</a>
+                        <a href="welCatalogo.php"  class="dropdown-toggle">Catálogo</a>
                         <div class="dropdown-menu" id="dropdown-menu">
                             <a href="#">Sillas</a>
                             <a href="#">Mesas de comedor</a>
@@ -38,18 +43,18 @@
                             <a href="#">Mesas de centro</a>
                         </div>
                     </div>
-                    
-                    <a href="AcercaDeRoble.html">Acerca de Roble</a>
-                    <a href="Sucursales.html">Sucursales</a>
+                    <a href="welAcercade.php">Acerca de Roble</a>
+                    <a href="welSucursales.php">Sucursales</a>
                 </li>
                 <li class="login-icon">
-                    <a href="login.html">
-                        <img src="img/acceso2.png" alt="login" class="icon">
-                    </a>
+                   
+                    
+                    <a href="logout.php">Cerrar Sesión (<?php echo htmlspecialchars($_SESSION['username']); ?>)</a>
+                    
                 </li>
                 <li class="cart-icon">
-                    <a href="login.html">
-                        <img src="img/BolsoCompraSinFondo2.png" alt="Carrito de Compra" class="icon" onclick=addcart()>
+                    <a href="shop.php">
+                        <img src="img/BolsoCompraSinFondo2.png" alt="Carrito de Compra" class="icon">
                     </a>
                 </li>
                
@@ -64,7 +69,7 @@
                 
                 <!-- Botón de llamada a la acción -->
                 <div class="button-container">
-                    <a href="Catalogo.php" class="explore-button">EXPLORA YA</a>
+                    <a href="welCatalogo.php" class="explore-button">EXPLORA YA</a>
                 </div>
             </section>
         </main>
@@ -72,13 +77,8 @@
         <!-- Imagen en la esquina inferior derecha -->
         <img src="img/Logoventana.png" alt="Logo" class="corner-logo">
         <script  src="job.js " ></script>
-
-        <script>
-            function addcart() {
-                alert("INICIA SESION");
-            }
-            </script>
     </div>
 </body>
 </html>
+
 

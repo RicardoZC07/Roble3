@@ -1,0 +1,219 @@
+body {
+    
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    color: #333;
+    background-image: url('img/FondoHome12.png'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Hace que la imagen cubra toda la página */
+    background-position: center; /* Centra la imagen en la página */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Fija la imagen al fondo mientras se desplaza el contenido */
+    display: flex;
+    flex-direction: column; /* Apila el header y el contenido principal */
+    height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+}
+
+
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e5e5e5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0px;
+    width: 100%;
+    
+}
+
+/* Estilo de la lista de navegación */
+.header-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* Logo */
+.logo {
+    width: 130px;
+    height: auto;
+}
+
+/* Menu Central */
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+/* Icono de carrito */
+.cart-icon .icon {
+    width: 24px;
+    height: 24px;
+}
+/* Icono de carrito */
+.login-icon .icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Estilo de los enlaces */
+.header-list a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
+    font-family: 'Playfair Display', serif;
+    padding: 8px 20px;
+}
+
+.header-list a:hover {
+    border-bottom: 2px solid #333;
+}
+
+/* Estilo Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    color: #333;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #e5e5e5;
+    padding: 10px;
+    border-radius: 4px;
+    top: 100%; /* Alineación debajo del toggle */
+    left: 0;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.dropdown-menu a {
+    color: #333;
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Mostrar el dropdown al pasar el ratón */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/*///////////////////////////////////////*/
+.product-detail {
+    height: 100%;
+    
+    
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 0px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centra el contenedor horizontalmente */
+  align-items: center; /* Centra el contenedor verticalmente */
+}
+
+.product-image-container {
+   
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+
+.product-detail-image {
+    max-width: 100%;
+    max-height: 400px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.product-info-container {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.product-detail-name {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000;
+    margin: 0;
+}
+
+.product-detail-price {
+    font-size: 24px;
+    color: #000000;
+    
+}
+
+.product-detail-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: #000000;
+    line-height: 1.5;
+}
+
+.product-detail-category {
+    font-size: 16px;
+    color: #777;
+    font-style: italic;
+}
+
+.add-to-cart-button {
+    padding: 15px 20px;
+    background: linear-gradient(90deg, #131d71, #3a57e8);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px;
+    align-self: flex-start;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.add-to-cart-button:hover {
+    background: linear-gradient(90deg, #0f165a, #2b4bcc);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen en la esquina inferior derecha */
+.corner-logo {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    opacity: 0.8;
+  }
+

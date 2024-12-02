@@ -84,59 +84,43 @@ body {
 }
 
 /* Estilo Dropdown */
-/* Estilo para el contenedor dropdown */
 .dropdown {
     position: relative;
 }
 
-/* Estilo para el enlace que activa el menú */
 .dropdown-toggle {
     cursor: pointer;
     color: #333;
 }
 
-/* Estilo para el menú */
 .dropdown-menu {
-    display: none; /* Inicialmente oculto */
-    position: fixed; /* Fijo para cubrir la pantalla */
-    top: 65px; /* Ajusta esto según la altura del header */
-    left: 0; /* Alineado al borde izquierdo */
-    width: 100vw; /* Ocupa todo el ancho de la ventana */
-    height: calc(100vh - 100px); /* Ocupa todo el alto menos la altura del header */
-    background-color: #e5e5e5; /* Fondo semitransparente */
-    z-index: 10; /* Asegura que esté por encima de otros elementos */
-    padding: 20px; /* Espaciado interno */
-   
-    overflow-y: auto; /* Permite desplazarse si el contenido es más alto que la ventana */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Distribuye en columnas */
-}
-
-/* Estilo para los enlaces dentro del menú */
-.dropdown-menu a {
-    color: #333333ae;
-    display: block;
-    padding: 10px 0;
-    text-decoration: none;
-    font-size: 1.2em;
-}
-
-/* Efecto hover para los enlaces */
-.dropdown-menu a:hover {
-    border-bottom: none;
-    color: #000000;
-    
-
-}
-/* Mostrar el menú cuando el cursor esté sobre .dropdown */
-.dropdown:hover .dropdown-menu {
-    display: grid;
-    
-}
-.dropdown:hover #main-content {
     display: none;
-    
-    
-    
+    position: absolute;
+    background-color: #e5e5e5;
+    padding: 10px;
+    border-radius: 4px;
+    top: 100%; /* Alineación debajo del toggle */
+    left: 0;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.dropdown-menu a {
+    color: #333;
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Mostrar el dropdown al pasar el ratón */
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
 
 
@@ -201,6 +185,135 @@ body {
     right: 10px;
     width: 50px;
     opacity: 0.8;
+}
+
+/* NUEVAS SECCIONES PARA "ACERCA DE ROBLE" */
+
+/* Título Principal */
+.about-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    font-weight: bold;
+    color: #e5e5e5;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.about-subtext {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.3em;
+    color: #e1d9d9;
+    text-align: center;
+    line-height: 1.8;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Nuestra Historia */
+.our-story {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 40px 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 900px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.our-story h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #e5e5e5;
+    margin-bottom: 15px;
+}
+
+.our-story p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1em;
+    color: #e1d9d9;
+    line-height: 1.8;
+}
+
+/* Galería de Imágenes */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 30px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.image-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.image-item:hover img {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.image-item p {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 1em;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Valores */
+.values {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 8px;
+    margin: 20px auto;
+    text-align: center;
+    max-width: 800px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.values h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #e5e5e5;
+    margin-bottom: 20px;
+}
+
+.values-list {
+    list-style: none;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1em;
+    color: #e1d9d9;
+}
+
+.values-list li {
+    margin: 10px 0;
+}
+
+/* Testimonios */
+.testimonials {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+    color: #e5e5e5;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    font-style: italic;
 }
 
 /* Media Queries para Responsividad */
